@@ -1,0 +1,24 @@
+.card{
+    height: 250px;
+    width: 200px;
+    
+}
+.card:not(:last-child){
+    margin: .5rem;
+}
+
+.img{
+    border-bottom: 1px solid black;
+}
+
+.elementoPokemon{
+    width: 15px;
+}
+
+.pokemon{
+    height: 110px;
+}
+
+.descricao{
+    margin-top: .5rem;
+}

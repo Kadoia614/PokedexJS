@@ -1,0 +1,37 @@
+.card {
+    display: inline-block;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: 10px;
+}
+
+.elementoPokemon {
+    margin-left: 5px;
+}
+
+.card h2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card-img-top {
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+    margin-left: 7%;
+}
+
+.main {
+    margin-top: 20px;
+    margin-left: 20px;
+    opacity: 0;
+}
+
+.lds-dual-ring {
+    opacity: 100;
+}
+
+body {
+    background-color: #f1f1f1;
+}
