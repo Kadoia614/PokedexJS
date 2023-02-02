@@ -1,3 +1,10 @@
+#quantidadePokemons{
+    width: 80px;
+}
+#pesquisarPokemon{
+    height: 28px;
+}
+
 .card{
     height: 260px;
     width: 200px;

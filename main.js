@@ -1,15 +1,19 @@
-var limit = 52;
-const url = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=0";
+function buscarPokemon(){
+    var teste = document.getElementById("quantidadePokemons").value;
+    console.log(teste)
+}
 
-getPokemon();
 
-function getPokemon() {
+getPokemon(200);
+
+function getPokemon(quantidade) {
+    const url = "https://pokeapi.co/api/v2/pokemon?limit=" + quantidade + "&offset=0";
     axios.get(url)
 
         .then(function (response) {
             // manipula dados da requisição
 
-            propriedadesPokemon(response.data.results);
+            propriedadesPokemon(response.data.results, quantidade);
         })
 
         .catch(function (error) {
@@ -18,7 +22,7 @@ function getPokemon() {
         })
 }
 
-function propriedadesPokemon(response) {
+function propriedadesPokemon(response, quantidade) {
     response.forEach((pokemon) => {
 
         axios.get(pokemon.url)
@@ -36,7 +40,7 @@ function propriedadesPokemon(response) {
                 console.error(error);
             })
 
-        conferePokemons();
+        conferePokemons(quantidade);
 
     });
 }
@@ -68,22 +72,24 @@ function criaPokemon(response) {
 
 }
 
-async function conferePokemons(){
+async function conferePokemons(quantidade){
     var pokemonsCarregados = 0;
     let interval = setInterval(async () => {
 
         pokemonsCarregados = document.querySelectorAll(".card").length;
 
-        if (limit == pokemonsCarregados) {
+        if (quantidade == pokemonsCarregados) {
             clearInterval(interval);
 
             document.getElementById("loading").style.opacity = "0";
+            document.getElementById("loading").style.display = "none";
+
 
             console.log(pokemonsCarregados)
         }
         else{
 
-            document.getElementById("loading").style.opacity = "100";
+            document.getElementById("loading").style.opacity = ".7";
 
             console.log(pokemonsCarregados)
         }

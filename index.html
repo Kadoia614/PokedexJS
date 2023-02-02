@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,29 +11,41 @@
     <link href="./main.css" rel="stylesheet">
     <link href="./global.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.1/axios.min.js" integrity="sha512-NbjaUHU8g0+Y8tMcRtIz0irSU3MjLlEdCvp82MqciVF4R2Ru/eaXHDjNSOvS6EfhRYbmQHuznp/ghbUvcC0NVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.1/axios.min.js"
+        integrity="sha512-NbjaUHU8g0+Y8tMcRtIz0irSU3MjLlEdCvp82MqciVF4R2Ru/eaXHDjNSOvS6EfhRYbmQHuznp/ghbUvcC0NVw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./main.js"></script>
 
     <title>API pokemon</title>
 </head>
+
 <body>
-    <div id="loading" class="d-flex justify-content-center align-items-center h-100 w-100 position-fixed">
+    <div id="loading" class="h-100 w-100 position-fixed" style="opacity: 0; display: none;">
         <div id="spinner"></div>
     </div>
 
-    <div id="main" class="p-5">
-
-        <div class="container">
-            <h1 class="text-center">Pokemons</h1>
-            <section id="RedenResults" class="d-flex justify-content-center flex-wrap">
-                
-            </section>
-
-
+    <div id="main">
+        <div class="container d-flex flex-column">
+            <label for="quantidadePokemons">qual a quantidade de pokemons que deseja ver?</label>
+            <div class="d-flex flex-row">
+                <input type="number" name="quantidadePokemons" id="quantidadePokemons">
+                <input type="button" value="Pesquisar" id="pesquisarPokemon" onclick="buscarPokemon()">
+            </div>
         </div>
         
+    </div>
+    <div class="container">
+        <h1 class="text-center">Pokemons</h1>
+        <section id="RedenResults" class="d-flex justify-content-center flex-wrap">
+
+        </section>
+
+
+    </div>
+
     </div>
 
 
 </body>
+
 </html>
