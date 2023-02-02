@@ -1,9 +1,9 @@
 .card{
-    height: 250px;
+    height: 260px;
     width: 200px;
     
 }
-.card:not(:last-child){
+.card{
     margin: .5rem;
 }
 

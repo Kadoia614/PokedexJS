@@ -3,3 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+#loading{
+    z-index: 1;
+    background-color: white;
+    opacity: .7;
+}
+#spinner{
+    height: 50px;
+    width: 50px;
+    border: 5px solid;
+    border-left: none;
+    border-radius: 50%;
+    border-color: black black transparent transparent ;
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

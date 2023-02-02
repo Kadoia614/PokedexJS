@@ -1,4 +1,4 @@
-var limit = 100;
+var limit = 52;
 const url = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=0";
 
 getPokemon();
@@ -36,6 +36,8 @@ function propriedadesPokemon(response) {
                 console.error(error);
             })
 
+        conferePokemons();
+
     });
 }
 
@@ -64,4 +66,27 @@ function criaPokemon(response) {
     `)
     })
 
+}
+
+async function conferePokemons(){
+    var pokemonsCarregados = 0;
+    let interval = setInterval(async () => {
+
+        pokemonsCarregados = document.querySelectorAll(".card").length;
+
+        if (limit == pokemonsCarregados) {
+            clearInterval(interval);
+
+            document.getElementById("loading").style.opacity = "0";
+
+            console.log(pokemonsCarregados)
+        }
+        else{
+
+            document.getElementById("loading").style.opacity = "100";
+
+            console.log(pokemonsCarregados)
+        }
+
+    }, 100);
 }
