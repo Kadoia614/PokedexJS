@@ -20,28 +20,31 @@
 </head>
 
 <body>
-    <div id="loading" class="h-100 w-100 position-fixed" style="opacity: 0; display: none;">
+    <div id="loading" class="h-100 w-100 position-fixed" style="display: none;">
         <div id="spinner"></div>
     </div>
 
     <div id="main">
-        <div class="container d-flex flex-column">
-            <label for="quantidadePokemons">qual a quantidade de pokemons que deseja ver?</label>
-            <div class="d-flex flex-row">
-                <input type="number" name="quantidadePokemons" id="quantidadePokemons">
-                <input type="button" value="Pesquisar" id="pesquisarPokemon" onclick="buscarPokemon()">
+
+        <div class="container">
+            <h1 class="text-center">Pokemons</h1>
+
+            <div class="d-flex justify-content-end">
+                <div class="d-flex flex-column">
+                    <label for="quantidadePokemons">qual a quantidade de pokemons que deseja ver?</label>
+                    <div class="d-flex flex-row justify-content-end">
+                        <input type="number" name="quantidadePokemons" id="quantidadePokemons">
+                        <input type="button" value="Pesquisar" id="pesquisarPokemon" onclick="buscarPokemon()">
+                    </div>
+                </div>
             </div>
+
+            <section id="RedenResults" class="d-flex justify-content-center flex-wrap">
+
+            </section>
+
+
         </div>
-        
-    </div>
-    <div class="container">
-        <h1 class="text-center">Pokemons</h1>
-        <section id="RedenResults" class="d-flex justify-content-center flex-wrap">
-
-        </section>
-
-
-    </div>
 
     </div>
 

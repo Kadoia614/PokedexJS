@@ -1,10 +1,12 @@
 function buscarPokemon(){
-    var teste = document.getElementById("quantidadePokemons").value;
-    console.log(teste)
+    var totalPokemon = document.getElementById("quantidadePokemons").value;
+    console.log(totalPokemon);
+
+    recarregarTela(totalPokemon);
 }
 
 
-getPokemon(200);
+
 
 function getPokemon(quantidade) {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=" + quantidade + "&offset=0";
@@ -25,6 +27,8 @@ function getPokemon(quantidade) {
 function propriedadesPokemon(response, quantidade) {
     response.forEach((pokemon) => {
 
+        conferePokemons(quantidade);
+
         axios.get(pokemon.url)
             .then(function (response) {
                 // manipula dados da requisição
@@ -39,8 +43,6 @@ function propriedadesPokemon(response, quantidade) {
 
                 console.error(error);
             })
-
-        conferePokemons(quantidade);
 
     });
 }
@@ -90,9 +92,27 @@ async function conferePokemons(quantidade){
         else{
 
             document.getElementById("loading").style.opacity = ".7";
+            document.getElementById("loading").style.display = "block";
+
 
             console.log(pokemonsCarregados)
         }
 
-    }, 100);
+    }, 2);
+}
+
+function recarregarTela(quantidade){
+    if (quantidade > 0){
+        document.getElementById("RedenResults").innerHTML = "";
+
+        getPokemon(quantidade);
+        console.log(quantidade);
+
+    } else if(quantidade < 0){
+        alert("Por favor, escolha um valor maior que zero!")
+
+    } else {
+        document.getElementById("RedenResults").innerHTML = "";
+
+    }    
 }

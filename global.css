@@ -6,6 +6,8 @@
 #loading{
     z-index: 1;
     background-color: white;
+    opacity: 0;
+    display: fixed;
 }
 #spinner{
     position: relative;
