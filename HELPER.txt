@@ -1,0 +1,3 @@
+GIT:
+
+https://kadoia614.github.io/PokedexJS/
