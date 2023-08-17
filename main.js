@@ -1,10 +1,9 @@
 function buscarPokemon(){
-    var totalPokemon = document.getElementById("quantidadePokemons").value;
+    var totalPokemon = parseInt(document.getElementById("quantidadePokemons").value);
     console.log(totalPokemon);
 
     recarregarTela(totalPokemon);
 }
-
 
 
 
@@ -48,6 +47,8 @@ function propriedadesPokemon(response, quantidade) {
 }
 
 function criaPokemon(response) {
+    $("#RedenResults").addClass("d-block")
+    $("#RedenResults").removeClass("d-none")
     let name = response.data.name;
     let pokemonimg = response.data.sprites.front_default;
     let type = response.data.types;
